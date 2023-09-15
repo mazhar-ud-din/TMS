@@ -1,15 +1,12 @@
-import { SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import SelectAuthScreen from './src/Screen/AuthScreen/SelectAuthScreen/SelectAuthScreen'
-import LoginScreen from './src/Screen/AuthScreen/LoginScreen/LoginScreen'
-import RegisterScreen from './src/Screen/AuthScreen/RegisterScreen/RegisterScreen'
-import ProfileScreen from './src/Screen/UserScreen/ProfileScreen/ProfileScreen'
+import { StatusBar, StyleSheet } from 'react-native'
+import MainRoute from './src/Navigation/MainRoute/MainRoute'
 
 const App = () => {
   return (
     <>
-            <StatusBar backgroundColor={'white'} barStyle={'dark-content'}/>
-    <ProfileScreen/>
+      <StatusBar backgroundColor={'white'} barStyle={'dark-content'} />
+      <MainRoute />
     </>
   )
 }

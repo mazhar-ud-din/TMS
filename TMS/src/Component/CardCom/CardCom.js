@@ -1,8 +1,7 @@
-import { StyleSheet, Text, View,Image } from 'react-native'
 import React from 'react'
-import { AppColors } from '../../Constant/AppColors/AppColors'
+import { Image, StyleSheet, Text, View } from 'react-native'
 import { Card } from 'react-native-paper'
-import { ImagesPath } from '../../Constant/ImagesPath/ImagesPath'
+import { AppColors } from '../../Constant/AppColors/AppColors'
 
 const CardCom = ({source,CardValue,CardContainer}) => {
   return (
@@ -33,12 +32,6 @@ const styles = StyleSheet.create({
       height: 70,
       justifyContent: 'center',
       width:70,
-    },
-    TrendContent:
-    {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center'
     },
     TrendText:
     {

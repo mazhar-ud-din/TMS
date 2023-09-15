@@ -15,4 +15,12 @@ export const ImagesPath = {
     ReportIc: require(`../../Assets/Images/report.png`),
     SettingIc: require(`../../Assets/Images/settings.png`),
     LogoutIc: require(`../../Assets/Images/logout.png`),
+    ListIc:require(`../../Assets/Images/list.png`),
+    FileIc:require(`../../Assets/Images/files.png`),
+    AddIc:require(`../../Assets/Images/add.png`),
+    SendIc:require(`../../Assets/Images/send.png`),
+    SendIc:require(`../../Assets/Images/send.png`),
+    UserIcon:require(`../../Assets/Images/users.png`),
+    SearchIn:require(`../../Assets/Images/search.png`),
+    DotIc:require(`../../Assets/Images/dots.png`),
 }

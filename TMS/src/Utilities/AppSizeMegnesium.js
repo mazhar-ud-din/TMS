@@ -19,11 +19,9 @@ const textScale = percent => {
         : Platform.OS === 'android'
             ? screenHeight - StatusBar.currentHeight
             : screenHeight;
-
     const heightPercent = (percent * deviceHeight) / 100;
     return Math.round(heightPercent);
 };
-
 const StatusBarHeight = Platform.select({
     ios: StatusBarManager.HEIGHT,
     android: StatusBar.currentHeight,

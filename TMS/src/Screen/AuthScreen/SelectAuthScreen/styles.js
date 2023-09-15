@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native"
 import { AppColors } from "../../../Constant/AppColors/AppColors"
-import { moderateScale, moderateScaleVertical } from "../../../Utilities/AppSizeMegnesium"
+import { moderateScale, moderateScaleVertical, textScale } from "../../../Utilities/AppSizeMegnesium"
 
 
 export const styles = StyleSheet.create({
@@ -21,36 +21,36 @@ export const styles = StyleSheet.create({
     },
     MidTextStyle:
     {
-        fontSize: 25,
+        fontSize:textScale(26) ,
         fontWeight: 'bold',
         color: AppColors.PrimaryBlack
     },
     MiniMidTextStyle:
     {
-        paddingVertical: 20,
+        paddingVertical:moderateScaleVertical(20),
         fontWeight: 'bold',
         color: AppColors.PrimaryBlack,
-        fontSize: 15
+        fontSize:textScale(18) 
     },
     ButtonContainer:{
         alignItems: 'center',
-        paddingVertical: 30
+        paddingVertical:moderateScaleVertical(30) 
     },
     ButtonStyle:{
         borderRadius: 8,
-        height: 45,
-        width: 300,
+        height:moderateScaleVertical(45),
+        width:moderateScale(300),
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#644CBC'
+        backgroundColor:AppColors.AppTheme
     },
     BtnText:{
         color: AppColors.PrimaryWhite,
         fontWeight: 'bold',
-        fontSize: 18
+        fontSize:textScale(18) 
     },
     ImgStyle: {
-        height: 350,
-        width: 350
+        height:moderateScaleVertical(350) ,
+        width:moderateScale(350) 
     }
 })

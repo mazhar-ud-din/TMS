@@ -1,16 +1,46 @@
-//yarn add axios
+import axios from "axios";
 
+const GetRequest=()=>{
+    axios.get(`https://jsonplaceholder.typicode.com/todos`)
+    .then(response => {
+      console.log('GET Response:', response.data);
+    })
+    .catch(error => {
+      console.error('GET Error:', error);
+    });
+}
 
-// const axios = require('axios');
+const AddItem = () => {
+    axios
+      .post(`https://jsonplaceholder.typicode.com/todos`, {
+        title: `title`,
+        completed: `completed`,
+      })
+      .then((response) => {
+        console.log('POST Response:', response.data);
+      })
+      .catch((error) => {
+        console.error('POST Error:', error);
+      });
+  };
+  
+  
+  
+const DeleteItem = () => {
+    axios
+      .delete(`https://jsonplaceholder.typicode.com/todos/${201}`)
+      .then((response) => {
+        console.log('DELETE Response:', response.data);
+      })
+      .catch((error) => {
+        console.error('DELETE Error:', error);
+      });
+  };
+  
+  // Example usage:
+  
 
-// // Send a GET request to retrieve data
-// axios.get('https://api.example.com/data')
-//   .then(response => {
-//     console.log('GET Response:', response.data);
-//   })
-//   .catch(error => {
-//     console.error('GET Error:', error);
-//   });
+  export  {GetRequest,DeleteItem,AddItem}
 
 // const axios = require('axios');
 

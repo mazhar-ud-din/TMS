@@ -1,37 +1,68 @@
 import { StyleSheet } from "react-native"
 import { AppColors } from "../../../Constant/AppColors/AppColors"
+import { moderateScale, moderateScaleVertical, textScale } from "../../../Utilities/AppSizeMegnesium"
 
 export const styles = StyleSheet.create({
-    MidTextStyle:
-    {
-        fontSize: 25,
+    container: {
+        flex: 1,
+        backgroundColor: AppColors.PrimaryWhite
+    },
+    TextStyle: {
+        marginVertical: moderateScaleVertical(30),
+        paddingHorizontal: moderateScale(15)
+    },
+    InputContainer: {
+        alignItems: 'center'
+    },
+    MidTextStyle: {
+        fontSize:textScale(30) ,
         fontWeight: 'bold',
         color: AppColors.PrimaryBlack
     },
-    MiniMidTextStyle:
-    {
+    MiniMidTextStyle: {
         fontWeight: 'bold',
         color: AppColors.PrimaryBlack,
-        fontSize: 15
+        fontSize:textScale(18) 
     },
-    ButtonContainer:
-    {
+    ButtonContainer: {
         alignItems: 'center',
-        paddingVertical: 30
+        paddingVertical:moderateScaleVertical(30) 
     },
-    ButtonStyle:
-    {
+    ButtonStyle: {
         borderRadius: 8,
-        height: 45,
-        width: 300,
+        height:moderateScaleVertical(45),
+        width:moderateScale(300) ,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#644CBC'
+        backgroundColor:AppColors.AppTheme
     },
-    BtnText:
-    {
-        color:AppColors.PrimaryWhite,
+    BtnText: {
+        color: AppColors.PrimaryWhite,
         fontWeight: 'bold',
-        fontSize: 18
+        fontSize:textScale(18) 
+    },
+    PasswordInput: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingVertical: moderateScaleVertical(10),
+        borderWidth: 1,
+        width: moderateScale(325),
+        height: moderateScaleVertical(60),
+        borderRadius: 10,
+        paddingHorizontal: moderateScale(5)
+    },
+    ImgStyle: {
+        width: moderateScale(30),
+        height: moderateScaleVertical(30)
+    },
+    ForgetStyle: {
+        alignSelf: 'flex-end',
+        paddingHorizontal: moderateScale(20),
+        marginVertical: moderateScaleVertical(20)
+    },
+    forgetText: {
+        color: AppColors.PrimaryBlack,
+        fontWeight: 'bold'
     }
 })
