@@ -4,22 +4,23 @@ import { AppColors } from '../../Constant/AppColors/AppColors';
 import { ImagesPath } from '../../Constant/ImagesPath/ImagesPath';
 import { ChatScreen, ListScreen, OverViewScreen, ProfileScreen, ProjectScreen } from '../../Screen';
 import { NavString } from '../NavString/NavString';
+import { moderateScale, moderateScaleVertical } from '../../Utilities/AppSizeMegnesium';
 
 const Tab = createBottomTabNavigator();
 
 const BottomTabNav = () => {
     return (
         <Tab.Navigator
-            initialRouteName={NavString.PROFILESCREEN}
+            initialRouteName={NavString.LISTSCREEN}
             screenOptions={{
                 tabBarActiveTintColor: AppColors.blue,
                 headerShown: false,
-                tabBarStyle: {height:55},
+                tabBarStyle: { height: 55 },
             }}
         >
             <Tab.Screen
-                name={NavString.PROFILESCREEN}
-                component={ProfileScreen}
+                name={NavString.LISTSCREEN}
+                component={ListScreen}
                 options={{
                     tabBarLabel: '',
                     tabBarLabelStyle: { fontSize: 12, },
@@ -30,11 +31,11 @@ const BottomTabNav = () => {
                 }}
             />
             <Tab.Screen
-                name={NavString.LISTSCREEN}
-                component={ListScreen}
+                name={NavString.OVERVIEWSCREEN}
+                component={OverViewScreen}
                 options={{
                     tabBarLabel: '',
-                    tabBarLabelStyle: { fontSize: 12},
+                    tabBarLabelStyle: { fontSize: 12 },
                     tabBarIcon: ({ focused }) => (
                         <Image source={ImagesPath.FileIc}
                             style={[styles.ImgStyle, { tintColor: focused ? AppColors.blue : AppColors.PrimaryBlack }]} />
@@ -46,10 +47,10 @@ const BottomTabNav = () => {
                 component={ProjectScreen}
                 options={{
                     tabBarLabel: '',
-                    tabBarLabelStyle: { fontSize: 12,marginBottom:15},
+                    tabBarLabelStyle: { fontSize: 12, marginBottom: 15 },
                     tabBarIcon: ({ focused }) => (
                         <Image source={ImagesPath.AddIc}
-                            style={[styles.ImgStyle, { tintColor: focused ? AppColors.AppTheme : AppColors.AppTheme,height:60,width:60 }]} />
+                            style={[styles.ImgStyle, { tintColor: focused ? AppColors.AppTheme : AppColors.AppTheme, height: 60, width: 60 }]} />
                     ),
                 }}
             />
@@ -58,7 +59,7 @@ const BottomTabNav = () => {
                 component={ChatScreen}
                 options={{
                     tabBarLabel: '',
-                    tabBarLabelStyle: { fontSize: 12,},
+                    tabBarLabelStyle: { fontSize: 12, },
                     tabBarIcon: ({ focused }) => (
                         <Image source={ImagesPath.SendIc}
                             style={[styles.ImgStyle, { tintColor: focused ? AppColors.blue : AppColors.PrimaryBlack }]} />
@@ -66,11 +67,11 @@ const BottomTabNav = () => {
                 }}
             />
             <Tab.Screen
-                name={NavString.OVERVIEWSCREEN}
-                component={OverViewScreen}
+                name={NavString.PROFILESCREEN}
+                component={ProfileScreen}
                 options={{
                     tabBarLabel: '',
-                    tabBarLabelStyle: { fontSize: 12,},
+                    tabBarLabelStyle: { fontSize: 12, },
                     tabBarIcon: ({ focused }) => (
                         <Image source={ImagesPath.UserIcon}
                             style={[styles.ImgStyle, { tintColor: focused ? AppColors.blue : AppColors.PrimaryBlack }]} />
@@ -84,8 +85,8 @@ export default BottomTabNav
 
 const styles = StyleSheet.create({
     ImgStyle: {
-        height: 28,
-        width: 28,
-        marginTop:10
+        height: moderateScaleVertical(28),
+        width: moderateScale(28),
+        marginTop: moderateScaleVertical(10)
     }
 })

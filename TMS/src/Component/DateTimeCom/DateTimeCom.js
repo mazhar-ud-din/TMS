@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { Button, Image, StyleSheet, View,Text } from "react-native";
+import { Button, Image, StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import { create } from "react-test-renderer";
 import { ImagesPath } from "../../Constant/ImagesPath/ImagesPath";
 import { moderateScale, moderateScaleVertical } from "../../Utilities/AppSizeMegnesium";
+import { AppColors } from "../../Constant/AppColors/AppColors";
 
-const DateTimeCom =()=>{
-    const date=new Date()
+const DateTimeCom = () => {
+  const date = new Date()
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
   const showDatePicker = () => {
     setDatePickerVisibility(true);
@@ -19,30 +20,32 @@ const DateTimeCom =()=>{
     hideDatePicker();
   };
   return (
-    <View style={styles.Container}>
-        <Text> {  date.toDateString()}</Text>
-      {/* <Button title="Show Date Picker" onPress={showDatePicker} /> */}
-      <DateTimePickerModal
-        isVisible={isDatePickerVisible}
-        mode="date"
-        onConfirm={handleConfirm}
-        onCancel={hideDatePicker}
-      />
-      <Image source={ImagesPath.AddIc} style={styles.ImgStyle}/>
-    </View>
+    <TouchableOpacity onPress={showDatePicker}>
+      <View style={styles.Container}>
+        <Text style={{ color: AppColors.PrimaryBlack, fontWeight: 'bold' }}> {date.toDateString()}</Text>
+        <DateTimePickerModal
+          isVisible={isDatePickerVisible}
+          mode="date"
+          onConfirm={handleConfirm}
+          onCancel={hideDatePicker}
+        />
+        <View style={{ marginLeft: 8 }}>
+          <Image source={ImagesPath.CalenderIc} style={styles.ImgStyle} />
+        </View>
+      </View>
+    </TouchableOpacity>
   );
 };
 
 export default DateTimeCom;
 
-const styles=StyleSheet.create({
-    Container:{
-        flexDirection:'row',
-        borderWidth:1,
-        alignItems:'center',
-    },
-    ImgStyle:{
-        height:moderateScaleVertical(20),
-        width:moderateScale(20)
-    }
+const styles = StyleSheet.create({
+  Container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  ImgStyle: {
+    height: moderateScaleVertical(20),
+    width: moderateScale(20),
+  }
 })

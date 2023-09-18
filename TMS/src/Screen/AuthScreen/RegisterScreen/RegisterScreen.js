@@ -6,14 +6,15 @@ import { AppColors } from '../../../Constant/AppColors/AppColors'
 import { ImagesPath } from '../../../Constant/ImagesPath/ImagesPath'
 import { moderateScale } from '../../../Utilities/AppSizeMegnesium'
 import { styles } from './styles'
+import { NavString } from '../../../Navigation/NavString/NavString'
 
 const RegisterScreen = ({ navigation }) => {
     return (
         <View style={styles.container} >
             <TouchableOpacity onPress={() => navigation.goBack()}>
-                <View style={{ flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', paddingVertical: 10 }}>
-                    <Image source={ImagesPath.BackIc} style={{ width: 30, height: 30 }} />
-                    <Text style={{ color: AppColors.PrimaryBlack, fontSize: 18, fontWeight: 'bold' }}>Back</Text>
+                <View style={styles.HeaderRow}>
+                    <Image source={ImagesPath.BackIc} style={styles.ImgHeaderStyle} />
+                    <Text style={styles.HeaderTxt}>Back</Text>
                 </View>
             </TouchableOpacity>
             <View style={styles.TextStyle}>
@@ -55,10 +56,12 @@ const RegisterScreen = ({ navigation }) => {
             <View style={styles.ButtonContainer}>
                 <ButtonCom
                     BtnValue={`SIGNUP`}
-                    ButtonStyle={{ backgroundColor: AppColors.AppTheme, marginVertical: moderateScale(30)}}
-                    TxtStyle={{color:AppColors.PrimaryWhite }}
+                    ButtonStyle={{ backgroundColor: AppColors.AppTheme, marginVertical: moderateScale(30) }}
+                    TxtStyle={{ color: AppColors.PrimaryWhite }}
                 />
                 <ButtonCom
+                onPress={() => { navigation.navigate(NavString.LOGINSCREEN) }}
+
                     BtnValue={` Already have an account? LOG IN`}
                     ButtonStyle={{ borderWidth: 0.5 }}
                 />

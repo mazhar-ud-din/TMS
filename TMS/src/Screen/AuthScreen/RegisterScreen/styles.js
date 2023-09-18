@@ -15,31 +15,31 @@ export const styles = StyleSheet.create({
         alignItems: 'center'
     },
     MidTextStyle: {
-        fontSize:textScale(30) ,
+        fontSize: textScale(30),
         fontWeight: 'bold',
         color: AppColors.PrimaryBlack
     },
     MiniMidTextStyle: {
         fontWeight: 'bold',
         color: AppColors.PrimaryBlack,
-        fontSize:textScale(18) 
+        fontSize: textScale(18)
     },
     ButtonContainer: {
         alignItems: 'center',
-        paddingVertical:moderateScaleVertical(30) 
+        paddingVertical: moderateScaleVertical(30)
     },
     ButtonStyle: {
         borderRadius: 8,
-        height:moderateScaleVertical(45),
-        width:moderateScale(300) ,
+        height: moderateScaleVertical(45),
+        width: moderateScale(300),
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor:AppColors.AppTheme
+        backgroundColor: AppColors.AppTheme
     },
     BtnText: {
         color: AppColors.PrimaryWhite,
         fontWeight: 'bold',
-        fontSize:textScale(18) 
+        fontSize: textScale(18)
     },
     PasswordInput: {
         flexDirection: 'row',
@@ -64,5 +64,21 @@ export const styles = StyleSheet.create({
     forgetText: {
         color: AppColors.PrimaryBlack,
         fontWeight: 'bold'
-    }
+    },
+    HeaderRow: {
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        paddingVertical: moderateScaleVertical(10)
+    },
+    ImgHeaderStyle: {
+        width: moderateScale(30),
+        height: moderateScaleVertical(30)
+    },
+    HeaderTxt:{ 
+        color: AppColors.PrimaryBlack, 
+        fontSize:textScale(18) ,
+         fontWeight: 'bold' 
+        }
 })
+

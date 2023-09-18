@@ -1,33 +1,33 @@
 import React from 'react'
-import { Image, StyleSheet, Text, TextInput, View } from 'react-native'
+import { Image, StyleSheet, TextInput, View } from 'react-native'
 import { AppColors } from '../../Constant/AppColors/AppColors'
 import { moderateScale, moderateScaleVertical } from '../../Utilities/AppSizeMegnesium'
 
-const InputCom = ({ placeholder, source }) => {
+const ProfileInput = ({ placeholder, source }) => {
     return (
         <View style={styles.Container}>
-            {source ? <Image source={source} style={styles.ImgStyle} /> : null}
-            <Text style={{ borderLeftWidth: 1 }} />
             <TextInput placeholderTextColor={AppColors.PrimaryBlack} style={{ flex: 1 }} placeholder={placeholder} />
+            <View style={{ justifyContent: 'center' }}>
+                {source ? <Image source={source} style={styles.ImgStyle} /> : null}
+            </View>
         </View>
     )
 }
 
-export default InputCom
+export default ProfileInput
 
 const styles = StyleSheet.create({
     Container: {
         flexDirection: 'row',
-        paddingVertical: moderateScaleVertical(10),
         borderWidth: 1,
         width: moderateScale(325),
-        height: moderateScaleVertical(60),
+        height: moderateScaleVertical(50),
         borderRadius: 10,
         paddingHorizontal: moderateScale(5),
         marginVertical: moderateScaleVertical(12),
     },
     ImgStyle: {
-        height: moderateScaleVertical(30),
-        width: moderateScale(30)
+        height: moderateScaleVertical(25),
+        width: moderateScale(25),
     }
 })

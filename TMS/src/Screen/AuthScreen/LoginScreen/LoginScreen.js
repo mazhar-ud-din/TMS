@@ -9,16 +9,14 @@ import { moderateScaleVertical } from '../../../Utilities/AppSizeMegnesium'
 import { styles } from './styles'
 
 const LoginScreen = ({ navigation }) => {
-    
     return (
         <View style={styles.container} >
             <TouchableOpacity onPress={() => { navigation.goBack() }}>
                 <View style={styles.HeaderContainer}>
                     <Image source={ImagesPath.BackIc} style={styles.ImgStyle} />
-                    <Text style={{ color: AppColors.PrimaryBlack, fontSize: 18, fontWeight: 'bold' }}>Back</Text>
+                    <Text style={styles.TextStyles}>Back</Text>
                 </View>
             </TouchableOpacity>
-
             <View style={styles.TextStyle}>
                 <Text style={styles.MidTextStyle}>
                     WellCome Back!
@@ -54,6 +52,7 @@ const LoginScreen = ({ navigation }) => {
                     TxtStyle={{ color: AppColors.PrimaryWhite }}
                 />
                 <ButtonCom
+                onPress={() => { navigation.navigate(NavString.REGISTERSCREEN) }}
                     BtnValue={`Don't have an account? SIGN UP`}
                     ButtonStyle={{ borderWidth: 0.4 }}
                 />

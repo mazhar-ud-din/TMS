@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
     },
     InputContainer: {
         alignItems: 'center',
-        marginTop:moderateScaleVertical(20)
+        marginTop: moderateScaleVertical(20)
     },
     TextStyle: {
         marginVertical: moderateScaleVertical(55),
@@ -59,5 +59,10 @@ export const styles = StyleSheet.create({
         color: AppColors.PrimaryWhite,
         fontWeight: 'bold',
         fontSize: textScale(18)
+    },
+    TextStyles: {
+        color: AppColors.PrimaryBlack,
+        fontSize: textScale(18),
+        fontWeight: 'bold'
     }
 })
