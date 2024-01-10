@@ -3,12 +3,17 @@ import { Image, StyleSheet, Text, TextInput, View } from 'react-native'
 import { AppColors } from '../../Constant/AppColors/AppColors'
 import { moderateScale, moderateScaleVertical } from '../../Utilities/AppSizeMegnesium'
 
-const InputCom = ({ placeholder, source }) => {
+const InputCom = ({ placeholder, source,onChangeText }) => {
     return (
         <View style={styles.Container}>
             {source ? <Image source={source} style={styles.ImgStyle} /> : null}
             <Text style={{ borderLeftWidth: 1 }} />
-            <TextInput placeholderTextColor={AppColors.PrimaryBlack} style={{ flex: 1 }} placeholder={placeholder} />
+            <TextInput 
+            placeholderTextColor={AppColors.PrimaryBlack} 
+            style={{ flex: 1 }}
+             placeholder={placeholder}
+             onChangeText={onChangeText}
+             />
         </View>
     )
 }
